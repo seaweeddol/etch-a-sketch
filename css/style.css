@@ -2,17 +2,30 @@ body {
   background: pink;
 }
 
+button {
+  width: 75px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
 .container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.grid {
   height: 550px;
   width: 550px;
   display: grid;
   margin: 0 auto;
+  border: 1px solid black;
+  background: white;
 }
 
-div {
-  border: 1px solid black;
+.cell {
+  /* border: 1px solid black; */
 }
 
 .fill {
-  background: dodgerblue;
+  background: black;
 }
