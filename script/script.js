@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 const resetButton = document.querySelector('#reset')
 const colorModeButton = document.querySelector('#color')
+const bwModeButton = document.querySelector('#black')
 
 createGrid(16);
 blackFill();
@@ -12,6 +13,11 @@ resetButton.addEventListener('click', (e) => {
 colorModeButton.addEventListener('click', (e) => {
   reset();
   randomFill();
+})
+
+bwModeButton.addEventListener('click', (e) => {
+  reset();
+  blackFill();
 })
 
 // create square grid based on number provided
@@ -29,7 +35,7 @@ function createGrid(rowsCols){
 function reset(){
   grid.innerHTML = '';
   let userGrid = 0;
-  while(userGrid <= 0 || userGrid >= 100) {
+  while(userGrid <= 0 || userGrid >= 100 || isNaN(userGrid)) {
     userGrid = prompt("Select a number between 1-100 to create a new grid.");
   }
   createGrid(userGrid);
