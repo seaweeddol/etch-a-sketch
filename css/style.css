@@ -1,11 +1,29 @@
 body {
-  background: pink;
+  background: #e90d27;
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  color: white;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 2.5em;
+  margin-top: 10px;
 }
 
 button {
-  width: 75px;
+  width: 170px;
   border-radius: 20px;
   padding: 10px;
+  margin: 10px;
+  margin-bottom: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
+  border: none;
+  box-shadow: 2px 3px 8px #274046;
+}
+
+button:focus {
+  outline: none;
 }
 
 .container {
@@ -20,6 +38,9 @@ button {
   margin: 0 auto;
   border: 1px solid black;
   background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .cell {
@@ -28,4 +49,23 @@ button {
 
 .fill {
   background: black;
+}
+
+#color {
+  background: #40E0D0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#black {
+  background: #E6DADA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.knob {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
 }
