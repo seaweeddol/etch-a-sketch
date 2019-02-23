@@ -18,6 +18,7 @@ resetButton.addEventListener('click', (e) => {
 function createGrid(rowsCols){
   for (let i = 0; i < rowsCols*rowsCols; i++) {
     const grid = document.querySelector('.container');
+    grid.setAttribute('style', 'grid-template-columns: repeat(auto-fit, minmax(' + 100/rowsCols + '%, 1fr))');
     const cell = document.createElement('div');
     cell.classList.add('cell');
     grid.appendChild(cell);
@@ -27,6 +28,9 @@ function createGrid(rowsCols){
 // reset grid and ask for user grid size
 function reset(){
   grid.innerHTML = '';
-  let userGrid = prompt("How big do you want the grid to be?");
+  let userGrid = 0;
+  while(userGrid <= 0 || userGrid >= 100) {
+    userGrid = prompt("Select a number between 1-100 for the grid size.");
+  }
   createGrid(userGrid);
 }

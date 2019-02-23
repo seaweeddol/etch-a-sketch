@@ -3,10 +3,9 @@ body {
 }
 
 .container {
-  height: 500px;
-  width: 500px;
+  height: 550px;
+  width: 550px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6.25%, 1fr));
   margin: 0 auto;
 }
 
