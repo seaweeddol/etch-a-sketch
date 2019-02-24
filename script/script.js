@@ -47,11 +47,12 @@ function reset(){
 function blackFill(){
   grid.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('grid') == false){
-      if (e.target.classList.contains('fill')) {
-        // let bgColor = e.target.style.backgroundColor;
-        // darkenColor(bgColor);
+      if (e.target.classList.contains('blackFill')) {
+        let opacity = parseFloat(e.target.style.opacity) + 0.1;
+        e.target.style.opacity = opacity;
       } else {
-        e.target.classList.add('fill');
+        e.target.classList.add('blackFill');
+        e.target.style.opacity = 0.1;
       }
     }
   })
