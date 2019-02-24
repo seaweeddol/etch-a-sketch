@@ -7,28 +7,37 @@ h1 {
   color: white;
   font-family: 'Cabin Sketch', cursive;
   font-size: 2.5em;
-  margin-top: 10px;
+  margin: 0;
+  display: inline;
 }
 
 button {
   width: 170px;
   border-radius: 20px;
   padding: 10px;
-  margin: 10px;
-  margin-bottom: 20px;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
-  border: 1px solid black;
-  box-shadow: 2px 3px 8px #274046;
+  border: 2px solid #232323;
+  box-shadow: 2px -3px 0px #232323;
+  font-weight: bolder;
+  color: white;
 }
 
 button:focus {
   outline: none;
 }
 
+.etchASketch {
+  width: 600px;
+  margin: 30px auto;
+}
+
 .container {
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
+  width: 90%;
+  justify-content: space-between;
+  display: flex;
 }
 
 .grid {
@@ -51,16 +60,18 @@ button:focus {
   background: black;
 }
 
+#reset {
+  background: #848484;
+}
+
 #color {
-  background: #40E0D0;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #33b9ac;
+  background: -webkit-linear-gradient(to right, #b30059, #D67501, #33b9ac);
+  background: linear-gradient(to right, #b30059, #D67501, #33b9ac);
 }
 
 #black {
-  background: #E6DADA;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: black;
 }
 
 .knob {
@@ -68,4 +79,7 @@ button:focus {
   height: 50px;
   border-radius: 50%;
   background: white;
+  display: inline-block;
+  border: 2px solid rgb(199, 199, 199);
+  box-shadow: 4px -3px 2px #CECECE;
 }

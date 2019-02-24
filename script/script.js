@@ -43,14 +43,14 @@ function reset(){
 
 
 
-// fill in cell when hovered
+// event listener for black color fill
 function blackFill(){
   grid.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('grid') == false){
-      if (e.target.classList.contains('blackFill')) {
+      if (e.target.classList.contains('blackFill')) { // if already filled, make fill 10% darker
         let opacity = parseFloat(e.target.style.opacity) + 0.1;
         e.target.style.opacity = opacity;
-      } else {
+      } else { // if not filled, fill with 10% opacity black
         e.target.classList.add('blackFill');
         e.target.style.opacity = 0.1;
       }
@@ -68,37 +68,17 @@ function randomColor(){
   return rgb;
 }
 
-// add event listener for random color fill
+// event listener for random color fill
 function randomFill(){
   grid.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('grid') == false){
-      if (e.target.style.backgroundColor) {
+      if (e.target.style.backgroundColor) { // if already filled, make fill 10% darker
         let opacity = parseFloat(e.target.style.opacity) + 0.1;
         e.target.style.opacity = opacity;
-      } else {
+      } else { // if not filled, fill with random color at 10% opacity
         e.target.style.background = randomColor();
         e.target.style.opacity = 0.1;
       }
     }
   })
 }
-
-// function darkenColor(currentColor){
-//   let rgb = currentColor;
-//
-//   var rStart = rgb.indexOf('(') + 1;
-//   var rEnd = rgb.indexOf(',',rStart);
-//   var r = rgb.substring(rStart,rEnd);
-//
-//   var gStart = rgb.indexOf(',') + 2;
-//   var gEnd = rgb.indexOf(',',gStart);
-//   var g = rgb.substring(gStart,gEnd);
-//
-//   var bStart = rgb.lastIndexOf(',') + 2;
-//   var bEnd = rgb.indexOf(')',bStart);
-//   var b = rgb.substring(bStart,bEnd);
-//
-//   console.log(r);
-//   console.log(g);
-//   console.log(b);
-// }
