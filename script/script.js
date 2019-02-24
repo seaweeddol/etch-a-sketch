@@ -41,11 +41,18 @@ function reset(){
   createGrid(userGrid);
 }
 
+
+
 // fill in cell when hovered
 function blackFill(){
   grid.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('grid') == false){
-      e.target.classList.add("fill");
+      if (e.target.classList.contains('fill')) {
+        // let bgColor = e.target.style.backgroundColor;
+        // darkenColor(bgColor);
+      } else {
+        e.target.classList.add('fill');
+      }
     }
   })
 }
@@ -56,7 +63,7 @@ function randomColor(){
   let b = Math.floor(Math.random() * 255);
   let g = Math.floor(Math.random() * 255);
 
-  let rgb = 'rgb(' + r + ', ' + b + ', ' + g + ')';
+  let rgb = 'rgb(' + r + ',' + b + ',' + g + ')';
   return rgb;
 }
 
@@ -64,7 +71,33 @@ function randomColor(){
 function randomFill(){
   grid.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('grid') == false){
-      e.target.style.background = randomColor();
+      if (e.target.style.backgroundColor) {
+        let opacity = parseFloat(e.target.style.opacity) + 0.1;
+        e.target.style.opacity = opacity;
+      } else {
+        e.target.style.background = randomColor();
+        e.target.style.opacity = 0.1;
+      }
     }
   })
 }
+
+// function darkenColor(currentColor){
+//   let rgb = currentColor;
+//
+//   var rStart = rgb.indexOf('(') + 1;
+//   var rEnd = rgb.indexOf(',',rStart);
+//   var r = rgb.substring(rStart,rEnd);
+//
+//   var gStart = rgb.indexOf(',') + 2;
+//   var gEnd = rgb.indexOf(',',gStart);
+//   var g = rgb.substring(gStart,gEnd);
+//
+//   var bStart = rgb.lastIndexOf(',') + 2;
+//   var bEnd = rgb.indexOf(')',bStart);
+//   var b = rgb.substring(bStart,bEnd);
+//
+//   console.log(r);
+//   console.log(g);
+//   console.log(b);
+// }
